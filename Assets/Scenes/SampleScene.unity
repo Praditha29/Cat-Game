@@ -119,6 +119,41 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &78687684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 78687685}
+  m_Layer: 0
+  m_Name: Fence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &78687685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78687684}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.0449, y: -11.44853, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1751716515}
+  - {fileID: 923158178}
+  - {fileID: 606393280}
+  - {fileID: 1815922455}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &223489843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,11 +1315,11 @@ Transform:
   m_GameObject: {fileID: 606393278}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0024425173, w: 0.9999971}
-  m_LocalPosition: {x: 3.4, y: -49.3, z: 0}
-  m_LocalScale: {x: 17.009571, y: 4.3842, z: 1}
+  m_LocalPosition: {x: -7.6449, y: -37.85147, z: 0}
+  m_LocalScale: {x: 17.009573, y: 4.3841996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 78687685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.28}
 --- !u!1 &619394800
 GameObject:
@@ -1611,11 +1646,11 @@ Transform:
   m_GameObject: {fileID: 923158176}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7103528, w: 0.70384586}
-  m_LocalPosition: {x: -76.8, y: 1.2, z: 0}
-  m_LocalScale: {x: 13.531367, y: 4.3842, z: 1}
+  m_LocalPosition: {x: -87.8449, y: 12.64853, z: 0}
+  m_LocalScale: {x: 13.531366, y: 4.3842, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 78687685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.527}
 --- !u!1001 &944840915
 PrefabInstance:
@@ -2604,11 +2639,11 @@ Transform:
   m_GameObject: {fileID: 1751716513}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.7103528, w: 0.70384586}
-  m_LocalPosition: {x: 82.5124, y: -0.2765, z: 0}
-  m_LocalScale: {x: 13.531367, y: 4.3842, z: 1}
+  m_LocalPosition: {x: 71.4675, y: 11.17203, z: 0}
+  m_LocalScale: {x: 13.531366, y: 4.3842, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 78687685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90.527}
 --- !u!1 &1763854600
 GameObject:
@@ -2870,7 +2905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogEnemy
   player: {fileID: 1916921412}
-  speed: 9
+  speed: 5
   playerScript: {fileID: 1916921413}
   animator: {fileID: 1794444772}
 --- !u!95 &1794444772
@@ -2980,11 +3015,11 @@ Transform:
   m_GameObject: {fileID: 1815922453}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.0024425173, w: 0.9999971}
-  m_LocalPosition: {x: 3, y: 50, z: 0}
-  m_LocalScale: {x: 17.009571, y: 4.3842, z: 1}
+  m_LocalPosition: {x: -8.0449, y: 61.448532, z: 0}
+  m_LocalScale: {x: 17.009573, y: 4.3841996, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 78687685}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.28}
 --- !u!1 &1823483039
 GameObject:
@@ -3371,7 +3406,4 @@ SceneRoots:
   - {fileID: 981116759}
   - {fileID: 1794444770}
   - {fileID: 1823483041}
-  - {fileID: 1751716515}
-  - {fileID: 923158178}
-  - {fileID: 606393280}
-  - {fileID: 1815922455}
+  - {fileID: 78687685}

@@ -66,6 +66,8 @@ public class Player : MonoBehaviour
             if (score >= WinScore) {
                 WinText.SetActive(true);
                 Debug.Log("You win!");
+                speed = 0;
+            
             }
 
         }
@@ -74,6 +76,7 @@ public class Player : MonoBehaviour
             LoseText.SetActive(true);
             Debug.Log("Dog ate you!");
             animator.SetBool("isRunning", false );
+            speed = 0;
         }
 
     }
