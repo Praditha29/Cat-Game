@@ -11,8 +11,25 @@ public class AudioManager : MonoBehaviour
     //Audio Clips
     public AudioClip background;
     public AudioClip CatEat;
+    public AudioClip WinMeow;
+    public AudioClip LoseMeow;
+    public AudioClip DogBark;
 
+    public static AudioManager instance;
 
+    //to not restart music upon scene change
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     //start music when game starts
     private void Start()

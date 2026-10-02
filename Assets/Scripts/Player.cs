@@ -37,6 +37,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Debug.Log("Speed: " + speed);
         //gives movement from joystick and moves in that speed
         horizontalInput = joystick.Horizontal * speed;
         verticalInput = joystick.Vertical * speed;
@@ -79,7 +80,8 @@ public class Player : MonoBehaviour
                 WinText.SetActive(true);
                 Debug.Log("You win!");
                 speed = 0;
-            
+                audioManager.PlaySFX(audioManager.WinMeow);
+
             }
 
         }
@@ -89,6 +91,8 @@ public class Player : MonoBehaviour
             Debug.Log("Dog ate you!");
             animator.SetBool("isRunning", false );
             speed = 0;
+            audioManager.PlaySFX(audioManager.LoseMeow);
+            audioManager.PlaySFX(audioManager.DogBark);
         }
 
     }
