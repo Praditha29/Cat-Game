@@ -8,13 +8,9 @@ public class DogEnemy : MonoBehaviour
 
     public Player playerScript;
 
-    
+    //for animation
+    public Animator animator;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -27,8 +23,14 @@ public class DogEnemy : MonoBehaviour
                 player.position,
                 speed * 0.01f
             );
-        }
 
+            //running animation for dog
+            animator.SetBool("isRunning", true);
+        }
+        if (playerScript.IsGameOver())
+        { 
+            animator.SetBool("isRunning", false);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -36,6 +38,9 @@ public class DogEnemy : MonoBehaviour
         if (collision.gameObject.tag == "Cat")
         {
             speed = 0;
+            animator.SetBool("isRunning", false);
+            animator.Play("Dog_idle");
+            Debug.Log("He ate them!");
         }
     }
 }

@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
             Destroy(collision.gameObject);
 
             UpdateFishCounter();
+
             if (score >= WinScore) {
                 WinText.SetActive(true);
                 Debug.Log("You win!");
@@ -72,6 +73,7 @@ public class Player : MonoBehaviour
         {
             LoseText.SetActive(true);
             Debug.Log("Dog ate you!");
+            animator.SetBool("isRunning", false );
         }
 
     }
