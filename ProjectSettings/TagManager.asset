@@ -7,6 +7,7 @@ TagManager:
   - Fish
   - Dog
   - Cat
+  - Audio
   layers:
   - Default
   - TransparentFX

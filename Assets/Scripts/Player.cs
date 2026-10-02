@@ -24,6 +24,17 @@ public class Player : MonoBehaviour
     private int totalFishes;
     public TextMeshProUGUI fishNumber;
 
+
+    //to play sound effects
+    AudioManager audioManager;
+
+    //to access audio and its components
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+
     private void FixedUpdate()
     {
         //gives movement from joystick and moves in that speed
@@ -60,10 +71,11 @@ public class Player : MonoBehaviour
         {
             score++;
             Destroy(collision.gameObject);
+            audioManager.PlaySFX(audioManager.CatEat);
 
             UpdateFishCounter();
 
-            if (score >= WinScore) {
+            if (totalFishes - score <= 0) {
                 WinText.SetActive(true);
                 Debug.Log("You win!");
                 speed = 0;
@@ -97,7 +109,7 @@ public class Player : MonoBehaviour
 
     public bool IsGameOver()
     {
-        return score >= 2;
+        return score >= totalFishes;
     }
 }
     
