@@ -1,5 +1,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -12,10 +14,15 @@ public class Player : MonoBehaviour
 
     int score = 0;
     public GameObject WinText;
+    public GameObject LoseText;
     public int WinScore;
 
     //for animation
     public Animator animator;
+
+    //to keep a count of fishes
+    private int totalFishes;
+    public TextMeshProUGUI fishNumber;
 
     private void FixedUpdate()
     {
@@ -54,6 +61,7 @@ public class Player : MonoBehaviour
             score++;
             Destroy(collision.gameObject);
 
+            UpdateFishCounter();
             if (score >= WinScore) {
                 WinText.SetActive(true);
                 Debug.Log("You win!");
@@ -62,11 +70,25 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Dog")
         {
+            LoseText.SetActive(true);
             Debug.Log("Dog ate you!");
         }
 
     }
 
+    void UpdateFishCounter()
+    {
+        int remainingFishes = totalFishes - score;
+        fishNumber.text = remainingFishes.ToString();
+
+    }
+
+    private void Start()
+    {
+        totalFishes = GameObject.FindGameObjectsWithTag("Fish").Length;
+
+        UpdateFishCounter();
+    }
 
     public bool IsGameOver()
     {

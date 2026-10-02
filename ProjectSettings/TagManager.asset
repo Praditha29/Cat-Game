@@ -6,14 +6,15 @@ TagManager:
   tags:
   - Fish
   - Dog
+  - Cat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Dog
   - Water
   - UI
-  - 
+  - Fish
   - 
   - 
   - 
