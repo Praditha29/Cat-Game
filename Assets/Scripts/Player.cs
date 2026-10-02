@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     public GameObject WinText;
     public int WinScore;
 
-
+    //for animation
+    public Animator animator;
 
     private void FixedUpdate()
     {
@@ -28,11 +29,21 @@ public class Player : MonoBehaviour
         // Flip the cat based on horizontal movement
         if (joystick.Horizontal < 0)
         {
-            transform.localScale = new Vector3(-1, 1, 0);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (joystick.Horizontal > 0)
         {
-            transform.localScale = new Vector3(1, 1, 0);
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+        // Check if joystick is being moved
+        if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
         }
     }
 
@@ -43,12 +54,23 @@ public class Player : MonoBehaviour
             score++;
             Destroy(collision.gameObject);
 
-            if (score >= 0) {
+            if (score >= WinScore) {
                 WinText.SetActive(true);
                 Debug.Log("You win!");
             }
 
         }
+        if (collision.gameObject.tag == "Dog")
+        {
+            Debug.Log("Dog ate you!");
+        }
+
+    }
+
+
+    public bool IsGameOver()
+    {
+        return score >= 2;
     }
 }
     
