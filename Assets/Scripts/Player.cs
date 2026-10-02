@@ -15,17 +15,6 @@ public class Player : MonoBehaviour
     public int WinScore;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void FixedUpdate()
     {
@@ -35,6 +24,16 @@ public class Player : MonoBehaviour
 
         //to actually move the player
         transform.Translate(horizontalInput, verticalInput, 0);
+
+        // Flip the cat based on horizontal movement
+        if (joystick.Horizontal < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 0);
+        }
+        else if (joystick.Horizontal > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 0);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
