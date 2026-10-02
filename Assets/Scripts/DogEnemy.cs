@@ -31,6 +31,16 @@ public class DogEnemy : MonoBehaviour
         { 
             animator.SetBool("isRunning", false);
         }
+
+        // Flip dog based on player's position
+        if (player.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (player.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
