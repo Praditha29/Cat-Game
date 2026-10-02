@@ -6,6 +6,11 @@ public class GameOver : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
     public void OnExitClick()
     {
 #if UNITY_EDITOR
