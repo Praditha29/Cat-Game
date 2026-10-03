@@ -1062,6 +1062,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385666418}
   m_CullTransparentMesh: 1
+--- !u!1 &435912625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435912626}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &435912626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435912625}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.232, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &440632136
 GameObject:
   m_ObjectHideFlags: 0
@@ -2400,7 +2431,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.4033334, y: 1.8533334}
+    oldSize: {x: 5.105, y: 2.78}
     newSize: {x: 10.21, y: 5.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3357,17 +3388,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1.2748187, y: -0.31549168}
+  m_Offset: {x: 2.0413065, y: -0.41842842}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 33.333332, y: 33.333332}
+    oldSize: {x: 50, y: 50}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 10.854034, y: 8.094084}
+  m_Size: {x: 15.21711, y: 10.255749}
   m_EdgeRadius: 0
 --- !u!50 &1794444768
 Rigidbody2D:
@@ -3483,7 +3514,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DogEnemy
   player: {fileID: 1916921412}
-  speed: 8
   playerScript: {fileID: 1916921413}
   animator: {fileID: 1794444772}
 --- !u!95 &1794444772
@@ -3737,17 +3767,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.63236785, y: -0.12528646}
+  m_Offset: {x: 1.0457897, y: -0.24395943}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16.666666, y: 16.666666}
+    oldSize: {x: 25, y: 25}
     newSize: {x: 4.9999995, y: 5.0781245}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5.484155, y: 4.5127144}
+  m_Size: {x: 8.074924, y: 6.292796}
   m_EdgeRadius: 0
 --- !u!50 &1916921410
 Rigidbody2D:
@@ -3987,3 +4017,4 @@ SceneRoots:
   - {fileID: 78687685}
   - {fileID: 49030471}
   - {fileID: 1124274444}
+  - {fileID: 435912626}

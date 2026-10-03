@@ -4,7 +4,7 @@ public class CatAnimMainMenu : MonoBehaviour
 {
     public Animator animator;
 
-    public float idleTime = 10f;
+    public float idleTime = 5f;
 
     private float timer;
 

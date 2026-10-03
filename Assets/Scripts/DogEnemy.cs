@@ -4,7 +4,7 @@ using UnityEngine.SocialPlatforms.Impl;
 public class DogEnemy : MonoBehaviour
 {
     public Transform player;
-    public float speed;
+    private float speed = 0.40f;
 
     public Player playerScript;
 
@@ -12,27 +12,27 @@ public class DogEnemy : MonoBehaviour
     public Animator animator;
 
 
-    // Update is called once per frame
-    void Update()
+   
+    private void FixedUpdate()
     {
-        // Keep chasing until the game is over
         if (!playerScript.IsGameOver())
         {
-            transform.position = Vector2.MoveTowards(
-                transform.position,
-                player.position,
-                speed * 0.01f
+            Vector2 direction = (player.position - transform.position).normalized;
+
+            transform.Translate(
+                direction.x * speed,
+                direction.y * speed,
+                0
             );
 
-            //running animation for dog
             animator.SetBool("isRunning", true);
         }
-        if (playerScript.IsGameOver())
-        { 
+        else
+        {
             animator.SetBool("isRunning", false);
         }
 
-        // Flip dog based on player's position
+        // Flip dog
         if (player.position.x < transform.position.x)
         {
             transform.localScale = new Vector3(-1, 1, 1);
