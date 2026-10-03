@@ -26,7 +26,7 @@ public class VolumeSettings : MonoBehaviour
         //get slider value of music playing
         float volume = musicSlider.value;
         //set volume to slider value
-        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
+        myMixer.SetFloat("music", volume);
 
         //to store volume at which player left it
         PlayerPrefs.SetFloat("musicVolume", volume);
@@ -37,7 +37,7 @@ public class VolumeSettings : MonoBehaviour
         //get slider value of music playing
         float volume = SFXSlider.value;
         //set volume to slider value
-        myMixer.SetFloat("SFX", Mathf.Log10(volume) * 20);
+        myMixer.SetFloat("SFX", volume);
 
         //to store volume at which player left it
         PlayerPrefs.SetFloat("SFXVolume", volume);
